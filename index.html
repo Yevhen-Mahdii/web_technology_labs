@@ -14,6 +14,7 @@
         <a href="#about">Про бригаду</a>
         <a href="#students">Студенти</a>
         <a href="#schedule">Розклад</a>
+        <a href="#registration">Реєстрація</a>
       </nav>
     </header>
     <main>
@@ -118,6 +119,45 @@
             </tr>
           </tbody>
         </table>
+      </section>
+      <section id="registration">
+        <h2>Навчальна форма реєстрації</h2>
+        <p id="form-help">Форма надсилає POST-запит до зовнішнього тестового сервісу httpbin.org, який показує отримані значення. Використовуйте вигадані дані та навчальний пароль. Це демонстрація, обліковий запис не створюється. Для надсилання потрібен інтернет.</p>
+        <form action="https://httpbin.org/post" method="post" aria-describedby="form-help">
+          <fieldset>
+            <legend>Основні відомості</legend>
+            <p><label for="name">Ім’я (обов’язково)<input id="name" name="student_name" type="text" placeholder="Ваше ім’я" required></label></p>
+            <p><label for="email">Електронна пошта (обов’язково)<input id="email" name="email" type="email" placeholder="student@example.com" required></label></p>
+            <p><label for="password">Навчальний пароль (мінімум 8 символів)<input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required></label></p>
+            <p><label for="birthdate">Дата народження<input id="birthdate" name="birthdate" type="date"></label></p>
+            <p><label for="year">Курс (від 1 до 6)<input id="year" name="year" type="number" min="1" max="6" step="1" value="2"></label></p>
+          </fieldset>
+          <fieldset>
+            <legend>Навчальні інтереси (можна обрати кілька)</legend>
+            <p><label><input type="checkbox" name="interests" value="html">HTML</label></p>
+            <p><label><input type="checkbox" name="interests" value="css">CSS</label></p>
+            <p><label><input type="checkbox" name="interests" value="javascript">JavaScript</label></p>
+          </fieldset>
+          <fieldset>
+            <legend>Бажаний формат роботи (один варіант)</legend>
+            <p><label><input type="radio" name="study_format" value="offline" checked>В аудиторії</label></p>
+            <p><label><input type="radio" name="study_format" value="online">Онлайн</label></p>
+            <p><label><input type="radio" name="study_format" value="mixed">Змішаний</label></p>
+          </fieldset>
+          <fieldset>
+            <legend>Додаткова інформація</legend>
+            <p><label for="subjects">Улюблені дисципліни (множинний вибір)</label></p>
+            <p id="select-help">На комп’ютері утримуйте Ctrl (Windows) або Command (macOS), щоб вибрати кілька пунктів.</p>
+            <select id="subjects" name="subjects" multiple size="4" aria-describedby="select-help">
+              <option value="web">Вебтехнології</option>
+              <option value="programming">Програмування</option>
+              <option value="math">Вища математика</option>
+              <option value="databases">Бази даних</option>
+            </select>
+            <p><label for="message">Коментар або пропозиції<br><textarea id="message" name="message" rows="4" placeholder="Розкажіть про свої навчальні цілі"></textarea></label></p>
+          </fieldset>
+          <button type="submit">Надіслати тестові дані</button>
+        </form>
       </section>
     </main>
   </body>
