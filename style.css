@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #303030;
+    background-color: #fff;
+}
+
+header, footer {
+    padding: 1rem;
+    background-color: #edf2f5;
+}
+
+h1, h2, h3 {
+    color: #2b526e;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+section {
+    margin: 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+a {
+    color: #245b83;
+}
+
+a:hover {
+    color: #16384f;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+}
+
+#students {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#students > h2 {
+    margin: 0;
+}
+
+#students > article {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+audio {
+    width: 100%;
+    max-width: 25rem;
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    text-align: left;
+}
+
+th {
+    background-color: #edf2f5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border: 1px solid #aaa;
+}
+
+legend {
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    font: inherit;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    margin-top: 0.25rem;
+    padding: 0.4rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+:focus-visible {
+    outline: 2px solid #245b83;
+    outline-offset: 2px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #245b83;
+    border-radius: 4px;
+    background-color: #245b83;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #16384f;
+}
+
+@media (min-width: 48rem) {
+    body {
+        padding: 2rem;
+    }
+
+    #students {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #students > h2 {
+        flex-basis: 100%;
+    }
+
+    #students > article {
+        flex: 1;
+    }
+}
