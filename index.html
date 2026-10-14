@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наша студентська бригада</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header id="top">
     <p>Лабораторна робота № 2 · Вебтехнології</p>
     <h1>Наша студентська бригада</h1>
     <p>Вивчаємо HTML, працюємо разом і створюємо перші вебсторінки.</p>
-    <nav aria-label="Основна навігація">
+    <nav class="menu" aria-label="Основна навігація">
         <a href="#about">Про бригаду</a>
         <a href="#students">Студенти</a>
         <a href="#schedule">Розклад</a>
@@ -81,6 +82,7 @@
     </section>
     <section id="schedule">
         <h2>Розклад занять</h2>
+        <div class="table-scroll" role="region" aria-label="Розклад занять" tabindex="0">
         <table>
             <caption>Приклад розкладу бригади: 4 стовпці та 5 рядків із заголовком</caption>
             <thead>
@@ -118,6 +120,7 @@
             </tr>
             </tbody>
         </table>
+        </div>
     </section>
     <section id="registration">
         <h2>Навчальна форма реєстрації</h2>
