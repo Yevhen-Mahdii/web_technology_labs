@@ -6,28 +6,28 @@
     <title>Наша студентська бригада</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header id="top">
+<body class="page">
+<header class="page-header" id="top">
     <p>Лабораторна робота № 2 · Вебтехнології</p>
-    <h1>Наша студентська бригада</h1>
+    <h1 class="heading heading--main">Наша студентська бригада</h1>
     <p>Вивчаємо HTML, працюємо разом і створюємо перші вебсторінки.</p>
     <nav class="menu" aria-label="Основна навігація">
-        <a href="#about">Про бригаду</a>
-        <a href="#students">Студенти</a>
-        <a href="#schedule">Розклад</a>
-        <a href="#registration">Реєстрація</a>
-        <a href="#media">Мультимедіа</a>
-        <a href="#contacts">Контакти</a>
+        <a class="link focusable" href="#about">Про бригаду</a>
+        <a class="link focusable" href="#students">Студенти</a>
+        <a class="link focusable" href="#schedule">Розклад</a>
+        <a class="link focusable" href="#registration">Реєстрація</a>
+        <a class="link focusable" href="#media">Мультимедіа</a>
+        <a class="link focusable" href="#contacts">Контакти</a>
     </nav>
 </header>
 <main>
-    <section id="about">
-        <h2>Про нашу бригаду</h2>
-        <p>Ми — <strong>бригада № 4</strong> групи <strong>АКІТР-26б</strong>. Наша мета — навчитися створювати <em>зрозумілі
+    <section class="section" id="about">
+        <h2 class="heading heading--section">Про нашу бригаду</h2>
+        <p>Ми — <strong>бригада № 4</strong> групи <strong>1АКІТР-26б</strong>. Наша мета — навчитися створювати <em>зрозумілі
             та доступні</em> вебдокументи.</p>
         <p>Імена, група, контакти та розклад нижче є навчальними прикладами. Замініть їх даними своєї бригади.
             Ілюстрації — умовні аватари, а не фотографії студентів.</p>
-        <h3>Наші завдання</h3>
+        <h3 class="heading">Наші завдання</h3>
         <ol>
             <li>Ознайомитися зі структурою HTML-документа.
             </li>
@@ -38,7 +38,7 @@
             <li>Перевірити роботу посилань і полів форми.
             </li>
         </ol>
-        <h3>Що ми вивчаємо</h3>
+        <h3 class="heading">Що ми вивчаємо</h3>
         <ul>
             <li>HTML
                 <ul>
@@ -55,15 +55,15 @@
             <li>Командну роботу та розподіл обов’язків
             </li>
         </ul>
-        <p>Корисний зовнішній ресурс: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+        <p>Корисний зовнішній ресурс: <a class="link focusable" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
                                          rel="noopener noreferrer">довідник HTML на MDN (відкривається в новій
             вкладці)</a>.</p>
     </section>
-    <section id="students">
-        <h2>Учасники бригади</h2>
-        <article>
-            <img src="student-1.svg" alt="Умовний синій аватар студента Андрія Коваленка" width="240" height="150">
-            <h3>Магдій Євген</h3>
+    <section class="section students" id="students">
+        <h2 class="heading heading--section students__heading">Учасники бригади</h2>
+        <article class="student">
+            <img class="student__image" src="student-1.svg" alt="Умовний синій аватар Євгена Магдія" title="Євген Магдій — бригадир">
+            <h3 class="heading">Магдій Євген</h3>
             <p><strong>Роль:</strong> бригадир. Координує виконання завдань.</p>
             <h4>Навчальний профіль</h4>
             <p>Спеціальність: автоматизація та робототехніка, 1-й курс.</p>
@@ -72,128 +72,126 @@
             <h6>Особиста ціль на семестр</h6>
             <p><em>Отримати допуск</em></p>
         </article>
-        <article>
-            <img src="student-2.svg" alt="Умовний фіолетовий аватар студентки Марії Бондар" width="240" height="150">
-            <h3>ШІ Астра</h3>
+        <article class="student">
+            <img class="student__image" src="student-2.svg" alt="Умовний фіолетовий аватар ШІ Астри" title="ШІ Астра — помічник з оформлення">
+            <h3 class="heading">ШІ Астра</h3>
             <p><strong>Роль:</strong> відповідає за оформлення сторінки.</p>
             <p>Спеціальність: помічник</p>
             <p>Цікавиться <em>Грошима</em> та токенами</p>
         </article>
     </section>
-    <section id="schedule">
-        <h2>Розклад занять</h2>
-        <div class="table-scroll" role="region" aria-label="Розклад занять" tabindex="0">
-        <table>
-            <caption>Приклад розкладу бригади: 4 стовпці та 5 рядків із заголовком</caption>
+    <section class="section" id="schedule">
+        <h2 class="heading heading--section">Розклад занять</h2>
+        <div class="table-scroll focusable" role="region" aria-label="Розклад занять" tabindex="0">
+        <table class="schedule">
+            <caption class="schedule__caption">Приклад розкладу бригади: 4 стовпці та 5 рядків із заголовком</caption>
             <thead>
-            <tr>
-                <th scope="col">День</th>
-                <th scope="col">Час</th>
-                <th scope="col">Дисципліна</th>
-                <th scope="col">Аудиторія</th>
+            <tr class="schedule__row">
+                <th class="schedule__cell schedule__cell--heading" scope="col">День</th>
+                <th class="schedule__cell schedule__cell--heading" scope="col">Час</th>
+                <th class="schedule__cell schedule__cell--heading" scope="col">Дисципліна</th>
+                <th class="schedule__cell schedule__cell--heading" scope="col">Аудиторія</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Понеділок</td>
-                <td>09:00–10:20</td>
-                <td>Вебтехнології</td>
-                <td>204</td>
+            <tr class="schedule__row">
+                <td class="schedule__cell">Понеділок</td>
+                <td class="schedule__cell">09:00–10:20</td>
+                <td class="schedule__cell">Вебтехнології</td>
+                <td class="schedule__cell">204</td>
             </tr>
-            <tr>
-                <td>Вівторок</td>
-                <td>10:40–12:00</td>
-                <td>Програмування</td>
-                <td>305</td>
+            <tr class="schedule__row">
+                <td class="schedule__cell">Вівторок</td>
+                <td class="schedule__cell">10:40–12:00</td>
+                <td class="schedule__cell">Програмування</td>
+                <td class="schedule__cell">305</td>
             </tr>
-            <tr>
-                <td>Середа</td>
-                <td>09:00–10:20</td>
-                <td>Вища математика</td>
-                <td>101</td>
+            <tr class="schedule__row">
+                <td class="schedule__cell">Середа</td>
+                <td class="schedule__cell">09:00–10:20</td>
+                <td class="schedule__cell">Вища математика</td>
+                <td class="schedule__cell">101</td>
             </tr>
-            <tr>
-                <td>Четвер</td>
-                <td>12:20–13:40</td>
-                <td>Бази даних</td>
-                <td>208</td>
+            <tr class="schedule__row">
+                <td class="schedule__cell">Четвер</td>
+                <td class="schedule__cell">12:20–13:40</td>
+                <td class="schedule__cell">Бази даних</td>
+                <td class="schedule__cell">208</td>
             </tr>
             </tbody>
         </table>
         </div>
     </section>
-    <section id="registration">
-        <h2>Навчальна форма реєстрації</h2>
+    <section class="section" id="registration">
+        <h2 class="heading heading--section">Навчальна форма реєстрації</h2>
         <p id="form-help">Форма надсилає POST-запит до зовнішнього тестового сервісу httpbin.org, який показує отримані
             значення. Використовуйте вигадані дані та навчальний пароль. Це демонстрація, обліковий запис не
             створюється. Для надсилання потрібен інтернет.</p>
         <form action="https://httpbin.org/post" method="post" aria-describedby="form-help">
-            <fieldset>
-                <legend>Основні відомості</legend>
-                <p><label for="name">Ім’я (обов’язково)<input id="name" name="student_name" type="text"
+            <fieldset class="form__group">
+                <legend class="form__legend">Основні відомості</legend>
+                <p><label for="name">Ім’я (обов’язково)<input class="form__control focusable" id="name" name="student_name" type="text"
                                                               placeholder="Ваше ім’я" required></label></p>
-                <p><label for="email">Електронна пошта (обов’язково)<input id="email" name="email" type="email"
+                <p><label for="email">Електронна пошта (обов’язково)<input class="form__control focusable" id="email" name="email" type="email"
                                                                            placeholder="student@example.com"
                                                                            required></label></p>
-                <p><label for="password">Навчальний пароль (мінімум 8 символів)<input id="password" name="password"
+                <p><label for="password">Навчальний пароль (мінімум 8 символів)<input class="form__control focusable" id="password" name="password"
                                                                                       type="password" minlength="8"
                                                                                       autocomplete="new-password"
                                                                                       required></label></p>
-                <p><label for="birthdate">Дата народження<input id="birthdate" name="birthdate" type="date"></label></p>
-                <p><label for="year">Курс (від 1 до 6)<input id="year" name="year" type="number" min="1" max="6"
+                <p><label for="birthdate">Дата народження<input class="form__control focusable" id="birthdate" name="birthdate" type="date"></label></p>
+                <p><label for="year">Курс (від 1 до 6)<input class="form__control focusable" id="year" name="year" type="number" min="1" max="6"
                                                              step="1" value="2"></label></p>
             </fieldset>
-            <fieldset>
-                <legend>Навчальні інтереси (можна обрати кілька)</legend>
-                <p><label><input type="checkbox" name="interests" value="html">HTML</label></p>
-                <p><label><input type="checkbox" name="interests" value="css">CSS</label></p>
-                <p><label><input type="checkbox" name="interests" value="javascript">JavaScript</label></p>
+            <fieldset class="form__group">
+                <legend class="form__legend">Навчальні інтереси (можна обрати кілька)</legend>
+                <p><label><input class="form__choice focusable" type="checkbox" name="interests" value="html">HTML</label></p>
+                <p><label><input class="form__choice focusable" type="checkbox" name="interests" value="css">CSS</label></p>
+                <p><label><input class="form__choice focusable" type="checkbox" name="interests" value="javascript">JavaScript</label></p>
             </fieldset>
-            <fieldset>
-                <legend>Бажаний формат роботи (один варіант)</legend>
-                <p><label><input type="radio" name="study_format" value="offline" checked>В аудиторії</label></p>
-                <p><label><input type="radio" name="study_format" value="online">Онлайн</label></p>
-                <p><label><input type="radio" name="study_format" value="mixed">Змішаний</label></p>
+            <fieldset class="form__group">
+                <legend class="form__legend">Бажаний формат роботи (один варіант)</legend>
+                <p><label><input class="form__choice focusable" type="radio" name="study_format" value="offline" checked>В аудиторії</label></p>
+                <p><label><input class="form__choice focusable" type="radio" name="study_format" value="online">Онлайн</label></p>
+                <p><label><input class="form__choice focusable" type="radio" name="study_format" value="mixed">Змішаний</label></p>
             </fieldset>
-            <fieldset>
-                <legend>Додаткова інформація</legend>
+            <fieldset class="form__group">
+                <legend class="form__legend">Додаткова інформація</legend>
                 <p><label for="subjects">Улюблені дисципліни (множинний вибір)</label></p>
                 <p id="select-help">На комп’ютері утримуйте Ctrl (Windows) або Command (macOS), щоб вибрати кілька
                     пунктів.</p>
-                <select id="subjects" name="subjects" multiple size="4" aria-describedby="select-help">
+                <select class="form__control focusable" id="subjects" name="subjects" multiple size="4" aria-describedby="select-help">
                     <option value="web">Вебтехнології</option>
                     <option value="programming">Програмування</option>
                     <option value="math">Вища математика</option>
                     <option value="databases">Бази даних</option>
                 </select>
-                <p><label for="message">Коментар або пропозиції<br><textarea id="message" name="message" rows="4"
+                <p><label for="message">Коментар або пропозиції<br><textarea class="form__control form__control--message focusable" id="message" name="message" rows="4"
                                                                              placeholder="Розкажіть про свої навчальні цілі"></textarea></label>
                 </p>
             </fieldset>
-            <button type="submit">Надіслати тестові дані</button>
+            <button class="button focusable" type="submit">Надіслати тестові дані</button>
         </form>
     </section>
-    <section id="media">
-        <h2>Мультимедіа</h2>
+    <section class="section" id="media">
+        <h2 class="heading heading--section">Мультимедіа</h2>
         <p>Демонстраційні матеріали MDN: аудіофрагмент і відео квітки. Вони завантажуються з інтернету та не зображують
             учасників бригади.</p>
-        <h3>Аудіоприклад</h3>
-        <audio controls preload="none" aria-label="Демонстраційний аудіофрагмент">
+        <h3 class="heading">Аудіоприклад</h3>
+        <audio class="media__audio" controls preload="none" aria-label="Демонстраційний аудіофрагмент">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
             Ваш браузер не підтримує аудіо.
         </audio>
-        <p><a href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Відкрити аудіофайл
+        <p><a class="link focusable" href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Відкрити аудіофайл
             MP3</a></p>
-        <h3>Відеоприклад з локальним файлом (не існує)</h3>
-        <video controls preload="none" playsinline width="480" height="270"
+        <h3 class="heading">Відеоприклад із зовнішнім MP4-файлом</h3>
+        <video class="media__video" controls preload="none" playsinline
                aria-label="Коротке відео квітки без мовлення">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
             Ваш браузер не підтримує відео.
         </video>
-        <h3>З зовнішнім айфреймом</h3>
-        <iframe
-                width="480"
-                height="270"
+        <h3 class="heading">Відео з YouTube</h3>
+        <iframe class="media__embed"
                 src="https://www.youtube.com/embed/_dAtp-4F53k"
                 title="Відео з YouTube"
                 allow="fullscreen"
@@ -201,11 +199,11 @@
         </iframe>
     </section>
 </main>
-<footer id="contacts">
-    <p><strong>Бригада № 4 · АКІТР-26б</strong></p>
-    <address>Приклад контакту: <a href="mailto:brigade3@example.com">brigade3@example.com</a></address>
+<footer class="page-footer" id="contacts">
+    <p><strong>Бригада № 4 · 1АКІТР-26б</strong></p>
+    <address>Приклад контакту: <a class="link focusable" href="mailto:brigade3@example.com">brigade3@example.com</a></address>
     <p>2026 · Навчальна робота з HTML</p>
-    <a href="#top">Повернутися на початок ↑</a>
+    <a class="link focusable" href="#top">Повернутися на початок ↑</a>
 </footer>
 </body>
 </html>

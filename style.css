@@ -1,177 +1,233 @@
-* {
-    box-sizing: border-box;
+/* Тимчасові навчальні коментарі. Переліки значень — найуживаніші, не вичерпні.
+   rem залежить від шрифту html (зазвичай 1rem = 16px); px — CSS-піксель.
+   .назва — клас; __частина — елемент BEM; --варіант — модифікатор BEM.
+   Кома об’єднує селектори; .page * вибирає всіх нащадків .page.
+   Для багатьох властивостей доступні inherit (успадкувати), initial
+   (початкове значення), unset (успадкувати або скинути залежно від властивості). */
+
+.page, .page * {
+    box-sizing: border-box; /* border-box включає padding і рамку в ширину; content-box — лише вміст. */
 }
 
-body {
-    max-width: 64rem;
-    margin: 0 auto;
-    padding: 1rem;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #303030;
-    background-color: #fff;
+.page {
+    max-width: 64rem; /* Максимальна ширина; можна rem, %, px або none (без обмеження). */
+    margin: 0 auto; /* Зовнішні відступи: 1 значення — всі боки; 2 — вертикаль/горизонталь; 3 — верх/боки/низ; auto може центрувати блок. */
+    padding: 1rem; /* Внутрішні відступи: 1 значення — всі боки; 2 — вертикаль/горизонталь. Значення без auto та без від’ємних чисел. */
+    font-family: Arial, sans-serif; /* Перелік шрифтів за пріоритетом. Родини: sans-serif (без зарубок), serif (із зарубками), monospace (моноширинний). */
+    line-height: 1.6; /* Висота рядка: число — множник розміру шрифту; також normal, rem, px, %. Тут 1.6 для читабельності. */
+    color: #303030; /* Колір тексту. Формати: назва (white), HEX (#303030), rgb(), hsl(). */
+    background-color: #fff; /* Колір тла; назва, HEX, rgb(), hsl() або transparent (прозоре). */
 }
 
-header, footer {
-    padding: 1rem;
-    background-color: #edf2f5;
+.page-header, .page-footer {
+    padding: 1rem; /* Внутрішні відступи. */
+    background-color: #edf2f5; /* Колір тла. */
 }
 
-h1, h2, h3 {
-    color: #2b526e;
+.heading {
+    color: #2b526e; /* Колір тексту. */
 }
 
-h1 {
-    font-size: 1.8rem;
+.heading--main {
+    font-size: 1.8rem; /* Розмір шрифту; rem — від html, em — від шрифту батька; також px, %, small, large. */
 }
 
-h2 {
-    font-size: 1.4rem;
+.heading--section {
+    font-size: 1.4rem; /* Розмір шрифту. */
 }
 
-section {
-    margin: 1.5rem 0;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
+.section {
+    margin: 1.5rem 0; /* Зовнішні відступи. */
+    padding-bottom: 1rem; /* Внутрішній відступ знизу; top/right/left задають інші боки. */
+    border-bottom: 1px solid #ccc; /* Лише нижня рамка: товщина, тип, колір. Типи: solid, dashed, dotted, double, none. */
 }
 
-a {
-    color: #245b83;
+.link {
+    color: #245b83; /* Колір тексту. */
 }
 
-a:hover {
-    color: #16384f;
-    text-decoration: none;
+/* :hover — наведення вказівника; :active — активація, :visited — відвідане посилання. */
+.link:hover {
+    color: #16384f; /* Колір тексту. */
+    text-decoration: none; /* Оздоблення тексту: none — без лінії, underline — підкреслення, overline — зверху, line-through — закреслення. */
 }
 
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    display: flex; /* Тип відображення: block — блок, inline — у рядку, inline-block — у рядку з розмірами, flex — гнучкий макет, grid — сітка, none — приховати. */
+    flex-wrap: wrap; /* Перенесення flex-елементів: wrap — дозволене, nowrap — один ряд, wrap-reverse — зворотне розташування рядків. */
+    gap: 0.5rem 1rem; /* Проміжки між елементами: 1 значення — обидва напрямки; 2 — між рядками та колонками. */
 }
 
-#students {
-    display: flex;
-    flex-direction: column;
+.students {
+    display: flex; /* block — окремий блок; flex — гнучке розташування дітей. */
+    flex-direction: column; /* Напрямок flex: row — уздовж рядка, column — стовпчик; row-reverse/column-reverse — зворотний порядок. */
     gap: 1rem;
 }
 
-#students > h2 {
-    margin: 0;
+.students__heading {
+    margin: 0; /* Зовнішні відступи. */
 }
 
-#students > article {
-    min-width: 0;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.student {
+    min-width: 0; /* Мінімальна ширина; 0 дозволяє стискання. Варіанти: auto, rem, %, px. */
+    padding: 1rem; /* Внутрішні відступи. */
+    box-shadow: 0 0.1rem 0.3rem rgb(0 0 0 / 8%); /* Тінь: зміщення X/Y, розмиття, колір. Також можна додати поширення, inset (внутрішня) або none. */
+    border: 1px solid #ccc; /* Рамка: товщина, тип, колір; solid — суцільна, dashed — штрихова, dotted — крапкова, none або 0 — без рамки. */
+    border-radius: 4px; /* Заокруглення кутів; 0 — прямі, px/rem — радіус, 50% — еліпс (коло для квадрата). */
 }
 
-img, video {
-    max-width: 100%;
-    height: auto;
+.student__image, .media__video {
+    max-width: 100%; /* Верхнє обмеження ширини; елемент може бути вужчим. */
+    height: auto; /* auto підбирає висоту автоматично; також rem, px, % (за визначеної висоти контейнера). */
 }
 
-audio {
-    width: 100%;
-    max-width: 25rem;
+.media__audio {
+    width: 100%; /* Ширина: % — від контейнера, rem — від шрифту html; також auto, px, fit-content. */
+    max-width: 25rem; /* Верхнє обмеження ширини; елемент може бути вужчим. */
 }
 
 .table-scroll {
-    overflow-x: auto;
+    overflow-x: auto; /* Горизонтальне переповнення: auto — прокрутка за потреби, scroll — прокрутка, hidden — приховати, visible — показати за межами. */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.schedule {
+    width: 100%; /* Ширина: % від контейнера, rem від шрифту html. */
+    border-collapse: collapse; /* Межі клітинок: collapse — об’єднані, separate — окремі. */
 }
 
-caption {
-    margin-bottom: 0.5rem;
-    text-align: left;
+.schedule__caption {
+    margin-bottom: 0.5rem; /* Зовнішній відступ знизу; значення у rem, px тощо. */
+    text-align: left; /* Вирівнювання тексту: left, right, center, justify; start/end залежать від напрямку письма. */
 }
 
-th, td {
-    padding: 0.5rem;
-    border: 1px solid #aaa;
-    text-align: left;
+.schedule__cell {
+    padding: 0.5rem; /* Внутрішні відступи. */
+    border: 1px solid #aaa; /* Рамка; 0 — без рамки. */
+    text-align: left; /* left — вирівнювання ліворуч. */
 }
 
-th {
-    background-color: #edf2f5;
+.schedule__cell--heading {
+    background-color: #edf2f5; /* Колір тла. */
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f7f7f7;
+/* Парні рядки; інші варіанти: odd — непарні, 3 — третій, 3n — кожний третій. */
+.schedule__row:nth-child(even) {
+    background-color: #f7f7f7; /* Колір тла. */
 }
 
-fieldset {
-    min-width: 0;
-    margin: 0 0 1rem;
-    padding: 1rem;
-    border: 1px solid #aaa;
+.form__group {
+    min-width: 0; /* 0 дозволяє блоку звужуватися. */
+    margin: 0 0 1rem; /* Зовнішні відступи. */
+    padding: 1rem; /* Внутрішні відступи. */
+    border: 1px solid #aaa; /* Рамка; 0 — без рамки. */
 }
 
-legend {
-    font-weight: bold;
+.form__legend {
+    font-weight: bold; /* Насиченість: normal (400), bold (700), lighter/bolder (відносно батька), числа 100–900; підтримка залежить від шрифту. */
 }
 
-input, select, textarea, button {
-    font: inherit;
+.form__control, .form__choice, .button {
+    font: inherit; /* inherit успадковує шрифт від батька. Скорочений запис також можливий: italic bold 1rem/1.5 Arial, sans-serif. */
 }
 
-input:not([type="checkbox"]):not([type="radio"]), select, textarea {
-    display: block;
-    width: 100%;
-    max-width: 30rem;
-    margin-top: 0.25rem;
-    padding: 0.4rem;
-    border: 1px solid #888;
-    border-radius: 4px;
+.form__control {
+    display: block; /* block — окремий блок; flex — гнучке розташування дітей. */
+    width: 100%; /* Ширина: % від контейнера, rem від шрифту html. */
+    max-width: 30rem; /* Верхнє обмеження ширини; елемент може бути вужчим. */
+    margin-top: 0.25rem; /* Зовнішній відступ зверху: відділяє поле від підпису. */
+    padding: 0.4rem; /* Внутрішні відступи. */
+    border: 1px solid #888; /* Рамка; 0 — без рамки. */
+    border-radius: 4px; /* Радіус заокруглення. */
 }
 
-textarea {
-    resize: vertical;
+.form__control--message {
+    resize: vertical; /* Зміна розміру користувачем: vertical — висота, horizontal — ширина, both — обидва напрямки, none — заборона. */
 }
 
-input[type="checkbox"], input[type="radio"] {
-    margin-right: 0.5rem;
+.form__choice {
+    margin-right: 0.5rem; /* Зовнішній відступ справа: відділяє прапорець від тексту. */
 }
 
-:focus-visible {
-    outline: 2px solid #245b83;
-    outline-offset: 2px;
+/* Видимий фокус, зокрема при Tab; :focus — будь-який фокус, :hover — наведення. */
+.focusable:focus-visible {
+    outline: 2px solid #245b83; /* Контур фокуса, що не займає місця в макеті: товщина, тип, колір. Не прибираємо без видимої заміни. */
+    outline-offset: 2px; /* Відстань контуру від краю: додатна — назовні, від’ємна — всередину. */
 }
 
-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #245b83;
-    border-radius: 4px;
-    background-color: #245b83;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.button {
+    padding: 0.5rem 1rem; /* Внутрішні відступи. */
+    border: 1px solid #245b83; /* Рамка; 0 — без рамки. */
+    border-radius: 4px; /* Радіус заокруглення. */
+    background-color: #245b83; /* Колір тла. */
+    color: white; /* Колір тексту. */
+    cursor: pointer; /* Курсор: pointer — рука, default — стрілка, text — введення тексту, move — переміщення, not-allowed — заборона. */
+    transition: background-color 0.2s, transform 0.2s; /* Плавна зміна: властивість + тривалість; none — вимкнути. Швидкість: ease, linear, ease-in, ease-out, ease-in-out. */
 }
 
-button:hover {
-    background-color: #16384f;
+.button:hover {
+    background-color: #16384f; /* Колір тла. */
+    transform: translateY(-0.1rem); /* Перетворення: translate/translateY — зсув, scale — масштаб, rotate — поворот, skew — нахил, none — без змін. */
 }
 
+/* Від 48rem (зазвичай 768px) змінюємо макет: базові стилі призначені для телефона. */
 @media (min-width: 48rem) {
-    body {
-        padding: 2rem;
+    .page {
+        padding: 2rem; /* Внутрішні відступи. */
     }
 
-    #students {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .students {
+        flex-direction: row; /* row — рядок, column — стовпчик. */
+        flex-wrap: wrap; /* wrap дозволяє перенесення. */
     }
 
-    #students > h2 {
-        flex-basis: 100%;
+    .students__heading {
+        flex-basis: 100%; /* Початковий розмір уздовж головної осі: auto, 0, %, rem. 100% тут віддає заголовку весь рядок. */
     }
 
-    #students > article {
-        flex: 1;
+    .student {
+        flex: 1; /* 1 у браузері означає 1 1 0% (зростання, стискання, база). Також auto (1 1 auto), none (0 0 auto), initial (0 1 auto). */
+    }
+}
+
+.student__image {
+    width: 15rem; /* Ширина: % від контейнера, rem від шрифту html. */
+}
+
+.media__video, .media__embed {
+    display: block; /* block — окремий блок; flex — гнучке розташування дітей. */
+    width: 100%; /* Ширина: % від контейнера, rem від шрифту html. */
+    max-width: 30rem; /* Верхнє обмеження ширини; елемент може бути вужчим. */
+    aspect-ratio: 16 / 9; /* Співвідношення ширини до висоти: 16 / 9 — широкоформатне, 1 / 1 — квадрат; auto — природне, якщо є. */
+}
+
+.media__embed {
+    height: auto; /* auto — автоматична висота. */
+    min-height: 12.5rem; /* Мінімальна висота; тут залишаємо достатньо місця для плеєра. */
+    border: 0; /* Рамка; 0 — без рамки. */
+}
+
+.page-header {
+    background-image: linear-gradient(120deg, #edf2f5, #f9fbfc); /* Зображення тла: url(...), linear-gradient(...), radial-gradient(...) або none. Тут легкий градієнт під кутом 120°. */
+    animation: appear 0.4s ease-out; /* Анімація: ім’я @keyframes, тривалість, швидкість; можна додати infinite для повторів. none — вимкнути. */
+}
+
+/* Ключові кадри: from = 0%, to = 100%. opacity: 0 — прозоро, 1 — непрозоро. */
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Вимикаємо рух, якщо користувач попросив менше анімації в налаштуваннях. */
+@media (prefers-reduced-motion: reduce) {
+    .page-header {
+        animation: none; /* none вимикає анімацію. */
+    }
+
+    .button {
+        transition: none; /* none вимикає плавний перехід. */
+    }
+
+    .button:hover {
+        transform: none; /* none скасовує перетворення; translateY зсуває вертикально. */
     }
 }
