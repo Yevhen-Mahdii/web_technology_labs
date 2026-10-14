@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша студентська бригада</title>
+</head>
+<body>
+<header id="top">
+    <p>Лабораторна робота № 2 · Вебтехнології</p>
+    <h1>Наша студентська бригада</h1>
+    <p>Вивчаємо HTML, працюємо разом і створюємо перші вебсторінки.</p>
+    <nav aria-label="Основна навігація">
+        <a href="#about">Про бригаду</a>
+        <a href="#students">Студенти</a>
+        <a href="#schedule">Розклад</a>
+        <a href="#registration">Реєстрація</a>
+        <a href="#media">Мультимедіа</a>
+        <a href="#contacts">Контакти</a>
+    </nav>
+</header>
+<main>
+    <section id="about">
+        <h2>Про нашу бригаду</h2>
+        <p>Ми — <strong>бригада № 4</strong> групи <strong>АКІТР-26б</strong>. Наша мета — навчитися створювати <em>зрозумілі
+            та доступні</em> вебдокументи.</p>
+        <p>Імена, група, контакти та розклад нижче є навчальними прикладами. Замініть їх даними своєї бригади.
+            Ілюстрації — умовні аватари, а не фотографії студентів.</p>
+        <h3>Наші завдання</h3>
+        <ol>
+            <li>Ознайомитися зі структурою HTML-документа.
+            </li>
+            <li>Додати інформацію про учасників бригади.
+            </li>
+            <li>Створити таблицю, форму та мультимедійний розділ.
+            </li>
+            <li>Перевірити роботу посилань і полів форми.
+            </li>
+        </ol>
+        <h3>Що ми вивчаємо</h3>
+        <ul>
+            <li>HTML
+                <ul>
+                    <li>Семантичні теги та заголовки
+                    </li>
+                    <li>Посилання, списки та таблиці
+                    </li>
+                    <li>Форми і мультимедіа
+                    </li>
+                </ul>
+            </li>
+            <li>CSS — оформлення сторінок
+            </li>
+            <li>Командну роботу та розподіл обов’язків
+            </li>
+        </ul>
+        <p>Корисний зовнішній ресурс: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+                                         rel="noopener noreferrer">довідник HTML на MDN (відкривається в новій
+            вкладці)</a>.</p>
+    </section>
+    <section id="students">
+        <h2>Учасники бригади</h2>
+        <article>
+            <img src="student-1.svg" alt="Умовний синій аватар студента Андрія Коваленка" width="240" height="150">
+            <h3>Магдій Євген</h3>
+            <p><strong>Роль:</strong> бригадир. Координує виконання завдань.</p>
+            <h4>Навчальний профіль</h4>
+            <p>Спеціальність: автоматизація та робототехніка, 1-й курс.</p>
+            <h5>Професійні інтереси</h5>
+            <p>Веброзробка та алгоритми.</p>
+            <h6>Особиста ціль на семестр</h6>
+            <p><em>Отримати допуск</em></p>
+        </article>
+        <article>
+            <img src="student-2.svg" alt="Умовний фіолетовий аватар студентки Марії Бондар" width="240" height="150">
+            <h3>ШІ Астра</h3>
+            <p><strong>Роль:</strong> відповідає за оформлення сторінки.</p>
+            <p>Спеціальність: помічник</p>
+            <p>Цікавиться <em>Грошима</em> та токенами</p>
+        </article>
+    </section>
+    <section id="schedule">
+        <h2>Розклад занять</h2>
+        <table>
+            <caption>Приклад розкладу бригади: 4 стовпці та 5 рядків із заголовком</caption>
+            <thead>
+            <tr>
+                <th scope="col">День</th>
+                <th scope="col">Час</th>
+                <th scope="col">Дисципліна</th>
+                <th scope="col">Аудиторія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Понеділок</td>
+                <td>09:00–10:20</td>
+                <td>Вебтехнології</td>
+                <td>204</td>
+            </tr>
+            <tr>
+                <td>Вівторок</td>
+                <td>10:40–12:00</td>
+                <td>Програмування</td>
+                <td>305</td>
+            </tr>
+            <tr>
+                <td>Середа</td>
+                <td>09:00–10:20</td>
+                <td>Вища математика</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td>Четвер</td>
+                <td>12:20–13:40</td>
+                <td>Бази даних</td>
+                <td>208</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="registration">
+        <h2>Навчальна форма реєстрації</h2>
+        <p id="form-help">Форма надсилає POST-запит до зовнішнього тестового сервісу httpbin.org, який показує отримані
+            значення. Використовуйте вигадані дані та навчальний пароль. Це демонстрація, обліковий запис не
+            створюється. Для надсилання потрібен інтернет.</p>
+        <form action="https://httpbin.org/post" method="post" aria-describedby="form-help">
+            <fieldset>
+                <legend>Основні відомості</legend>
+                <p><label for="name">Ім’я (обов’язково)<input id="name" name="student_name" type="text"
+                                                              placeholder="Ваше ім’я" required></label></p>
+                <p><label for="email">Електронна пошта (обов’язково)<input id="email" name="email" type="email"
+                                                                           placeholder="student@example.com"
+                                                                           required></label></p>
+                <p><label for="password">Навчальний пароль (мінімум 8 символів)<input id="password" name="password"
+                                                                                      type="password" minlength="8"
+                                                                                      autocomplete="new-password"
+                                                                                      required></label></p>
+                <p><label for="birthdate">Дата народження<input id="birthdate" name="birthdate" type="date"></label></p>
+                <p><label for="year">Курс (від 1 до 6)<input id="year" name="year" type="number" min="1" max="6"
+                                                             step="1" value="2"></label></p>
+            </fieldset>
+            <fieldset>
+                <legend>Навчальні інтереси (можна обрати кілька)</legend>
+                <p><label><input type="checkbox" name="interests" value="html">HTML</label></p>
+                <p><label><input type="checkbox" name="interests" value="css">CSS</label></p>
+                <p><label><input type="checkbox" name="interests" value="javascript">JavaScript</label></p>
+            </fieldset>
+            <fieldset>
+                <legend>Бажаний формат роботи (один варіант)</legend>
+                <p><label><input type="radio" name="study_format" value="offline" checked>В аудиторії</label></p>
+                <p><label><input type="radio" name="study_format" value="online">Онлайн</label></p>
+                <p><label><input type="radio" name="study_format" value="mixed">Змішаний</label></p>
+            </fieldset>
+            <fieldset>
+                <legend>Додаткова інформація</legend>
+                <p><label for="subjects">Улюблені дисципліни (множинний вибір)</label></p>
+                <p id="select-help">На комп’ютері утримуйте Ctrl (Windows) або Command (macOS), щоб вибрати кілька
+                    пунктів.</p>
+                <select id="subjects" name="subjects" multiple size="4" aria-describedby="select-help">
+                    <option value="web">Вебтехнології</option>
+                    <option value="programming">Програмування</option>
+                    <option value="math">Вища математика</option>
+                    <option value="databases">Бази даних</option>
+                </select>
+                <p><label for="message">Коментар або пропозиції<br><textarea id="message" name="message" rows="4"
+                                                                             placeholder="Розкажіть про свої навчальні цілі"></textarea></label>
+                </p>
+            </fieldset>
+            <button type="submit">Надіслати тестові дані</button>
+        </form>
+    </section>
+    <section id="media">
+        <h2>Мультимедіа</h2>
+        <p>Демонстраційні матеріали MDN: аудіофрагмент і відео квітки. Вони завантажуються з інтернету та не зображують
+            учасників бригади.</p>
+        <h3>Аудіоприклад</h3>
+        <audio controls preload="none" aria-label="Демонстраційний аудіофрагмент">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+            Ваш браузер не підтримує аудіо.
+        </audio>
+        <p><a href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Відкрити аудіофайл
+            MP3</a></p>
+        <h3>Відеоприклад</h3>
+        <video controls preload="none" playsinline width="480" height="270"
+               aria-label="Коротке відео квітки без мовлення">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+        <p><a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">Відкрити відеофайл MP4</a>
+        </p>
+    </section>
+</main>
+<footer id="contacts">
+    <p><strong>Бригада № 4 · АКІТР-26б</strong></p>
+    <address>Приклад контакту: <a href="mailto:brigade3@example.com">brigade3@example.com</a></address>
+    <p>2026 · Навчальна робота з HTML</p>
+    <a href="#top">Повернутися на початок ↑</a>
+</footer>
+</body>
+</html>
